@@ -13,11 +13,10 @@ yarn serve
 ### Compiles and minifies for production
 ```
 yarn build
-```
 
-### Lints and fixes files
-```
-yarn lint
+docker build -t wr-client-web -f ./storage/build/Dockerfile .
+
+docker run -dp 8080:80 --name client wr-client-web
 ```
 
 ### Customize configuration
