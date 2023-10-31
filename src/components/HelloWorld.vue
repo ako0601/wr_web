@@ -1,94 +1,32 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel"
-          target="_blank"
-          rel="noopener"
-          >babel</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint"
-          target="_blank"
-          rel="noopener"
-          >eslint</a
-        >
-      </li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li>
-        <a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a>
-      </li>
-      <li>
-        <a href="https://forum.vuejs.org" target="_blank" rel="noopener"
-          >Forum</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.vuejs.org" target="_blank" rel="noopener"
-          >Community Chat</a
-        >
-      </li>
-      <li>
-        <a href="https://twitter.com/vuejs" target="_blank" rel="noopener"
-          >Twitter</a
-        >
-      </li>
-      <li>
-        <a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a>
-      </li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li>
-        <a href="https://router.vuejs.org" target="_blank" rel="noopener"
-          >vue-router</a
-        >
-      </li>
-      <li>
-        <a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/vue-devtools#vue-devtools"
-          target="_blank"
-          rel="noopener"
-          >vue-devtools</a
-        >
-      </li>
-      <li>
-        <a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener"
-          >vue-loader</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-          rel="noopener"
-          >awesome-vue</a
-        >
-      </li>
-    </ul>
+  <div>
+    <div class="subject">
+      <h1>랭킹</h1>
+    </div>
+    <div class="hello">
+      <nav class="navigation">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="#" class="menu__link">전체</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">데드</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">스쿼트</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">벤치</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   props: {
     msg: String,
   },
@@ -97,18 +35,63 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.subject {
+  width: 800px;
+  margin: auto;
+  font-weight: 900;
+  font-size: 30px;
+  color: #5ac53a;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.subject h1 {
+  text-align: left;
+  margin: 0px;
+  margin-left: 40px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.hello {
+  margin-top: 40px;
+  margin: auto;
+  width: 780px;
 }
 a {
-  color: #42b983;
+  outline: 0;
+  text-decoration: none;
+}
+a:visited {
+  color: #a09fa6;
+  text-decoration: none;
+}
+a:hover {
+  color: #e4e4e4;
+}
+a:active {
+  color: #e4e4e4;
+  text-decoration: none;
+}
+
+.navigation {
+  width: 100%;
+  font-weight: 900;
+  font-size: 32px;
+  border-bottom: 2px inset #606060;
+  padding-bottom: 5px;
+}
+
+.menu {
+  display: flex;
+  justify-content: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 0;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+li {
+  margin-top: 55px;
+  margin-bottom: 10px;
+  margin-left: 60px;
 }
 </style>
