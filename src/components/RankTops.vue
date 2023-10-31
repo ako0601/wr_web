@@ -11,7 +11,7 @@
             <h4>nd</h4>
           </div>
           <div class="thin_letter">
-            <p>330KG</p>
+            <p>600kg</p>
           </div>
         </div>
         <img class="profile_img" alt="profile" src="../assets/profile.png" />
@@ -29,7 +29,7 @@
             <h4>st</h4>
           </div>
           <div class="thin_letter">
-            <p>330KG</p>
+            <p>1000kg</p>
           </div>
         </div>
         <img class="profile_img" alt="profile" src="../assets/profile.png" />
@@ -47,12 +47,12 @@
             <h4>rd</h4>
           </div>
           <div class="thin_letter">
-            <p>330KG</p>
+            <p>800kg</p>
           </div>
         </div>
         <img class="profile_img" alt="profile" src="../assets/profile.png" />
         <div class="thin_letter">
-          <p>gymgilmo92</p>
+          <p>hawaiilife</p>
         </div>
         <div class="grid-container">
           <div></div>
@@ -81,7 +81,7 @@ export default {
 }
 .ranking1231 {
   width: 170px;
-  border: 2.5px solid #ffd500;
+  border: 3px solid #ffd500;
   margin: auto;
   border-radius: 50px 50px 50px 50px;
   margin-top: 20px;
@@ -91,7 +91,7 @@ export default {
 }
 .ranking1232 {
   width: 170px;
-  border: 2.5px solid #e4e4e4;
+  border: 3px solid #e4e4e4;
   margin: auto;
   border-radius: 50px 50px 50px 50px;
   margin-top: 20px;
@@ -101,7 +101,7 @@ export default {
 }
 .ranking1233 {
   width: 170px;
-  border: 2.5px solid #bf7869;
+  border: 3px solid #bf7869;
   margin: auto;
   border-radius: 50px 50px 50px 50px;
   margin-top: 20px;

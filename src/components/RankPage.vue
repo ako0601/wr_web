@@ -1,10 +1,16 @@
 <template>
   <div class="ranking">
-    <h2>1</h2>
-    <img class="profile_img" alt="profile" src="../assets/gim.jpg" />
-    <h2>gymgilmo92</h2>
-    <h2>330KG</h2>
-    <img class="rank1" alt="rank1" src="../assets/rank1.png" />
+    <p id="rankinallrank">1</p>
+    <div id="profile_id">
+      <img class="profile_img" alt="profile" src="../assets/profile.png" />
+      <p>textfield</p>
+    </div>
+    <div id="kg_div">
+      <p id="kg_num">500</p>
+      <p id="kg">kg</p>
+    </div>
+    <p id="registerdate">10월 31일</p>
+    <h3>></h3>
   </div>
 </template>
 
@@ -20,25 +26,47 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .ranking {
-  width: 60%;
+  color: #dadada;
+  width: 100%;
   max-width: 1000px;
   min-width: 600px;
   height: 90px;
-  background-color: white;
   margin: auto;
   display: flex;
   justify-content: space-around;
-  border-radius: 7px;
+  border-top: 1.5px solid #3d3d3d;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  font-size: x-large;
 }
 .rank1 {
   width: 30px;
 }
+#profile_id {
+  display: flex;
+  align-items: center;
+}
 .profile_img {
-  width: 60px;
+  width: 30px;
+  height: 30px;
   border-radius: 70%;
   overflow: hidden;
+  margin-right: 20px;
+}
+#kg_div {
+  display: flex;
+}
+#kg_num {
+  font-weight: 600;
+}
+#kg {
+  color: #898a8d;
+}
+#rankinallrank {
+  color: #888888;
+  font-weight: 300;
+  font-size: xx-large;
+}
+#registerdate {
+  font-size: medium;
 }
 </style>

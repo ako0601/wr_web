@@ -14,6 +14,7 @@
     <RankPage />
     <RankPage />
     <RankPage />
+    <RankPage />
   </div>
 </template>
 
@@ -33,7 +34,11 @@ export default {
 </script>
 
 <style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 html {
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-display: swap;
   background-color: #0f0f0f;
   width: 800px;
   margin: auto;
@@ -52,7 +57,10 @@ html {
   padding: 30px 0 30px 0;
 }
 .All_ranking {
+  margin-left: 45px;
+  display: flex;
   color: #e4e4e4;
+  align-items: center;
 }
 .tooltip {
   position: relative;
@@ -64,10 +72,10 @@ html {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 160px;
-  background-color: #333;
+  background-color: #d9d9d9;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 70%;
   padding: 5px;
   position: absolute;
   z-index: 1;
