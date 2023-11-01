@@ -20,8 +20,8 @@ export default {
   props: {
     msg: String,
     rankN: {
-      type: String,
-      default: 'Unrank',
+      type: Number,
+      default: 0,
     },
   },
 };
