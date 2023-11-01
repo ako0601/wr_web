@@ -1,6 +1,6 @@
 <template>
   <div class="ranking">
-    <p id="rankinallrank">1</p>
+    <p id="rankinallrank">{{ rankN }}</p>
     <div id="profile_id">
       <img class="profile_img" alt="profile" src="../assets/profile.png" />
       <p>textfield</p>
@@ -9,7 +9,7 @@
       <p id="kg_num">500</p>
       <p id="kg">kg</p>
     </div>
-    <p id="registerdate">10월 31일</p>
+    <p id="registerdate">Registration date</p>
     <h3>></h3>
   </div>
 </template>
@@ -19,6 +19,10 @@ export default {
   name: 'RankPage',
   props: {
     msg: String,
+    rankN: {
+      type: String,
+      default: 'Unrank',
+    },
   },
 };
 </script>

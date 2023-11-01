@@ -10,11 +10,11 @@
         <span class="tooltiptext">This is a tooltip!</span>
       </div>
     </div>
-    <RankPage />
-    <RankPage />
-    <RankPage />
-    <RankPage />
-    <RankPage />
+    <RankPage rankN="1" />
+    <RankPage rankN="2" />
+    <RankPage rankN="3" />
+    <RankPage rankN="4" />
+    <RankPage rankN="5" />
   </div>
 </template>
 
