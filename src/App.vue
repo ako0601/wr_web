@@ -10,11 +10,7 @@
         <span class="tooltiptext">This is a tooltip!</span>
       </div>
     </div>
-    <RankPage />
-    <RankPage />
-    <RankPage />
-    <RankPage />
-    <RankPage />
+    <RankPage v-for="n in 5" :key="n" :rankN="n" />
   </div>
 </template>
 
