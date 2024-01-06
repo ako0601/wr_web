@@ -9,7 +9,7 @@
       <p id="kg_num">500</p>
       <p id="kg">kg</p>
     </div>
-    <p id="registerdate">Registration date</p>
+    <p id="registerdate">xx월 xx일</p>
     <h3>></h3>
   </div>
 </template>

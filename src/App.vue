@@ -1,90 +1,69 @@
+<!-- App.vue -->
 <template>
-  <!-- <img alt="Vue logo" src="./assets/barbell2.png" /> -->
-  <HelloWorld />
-  <div class="rank">
-    <RankTops />
-    <div class="All_ranking">
-      <h1>All Ranking</h1>
-      <div class="tooltip">
-        <button>?</button>
-        <span class="tooltiptext">This is a tooltip!</span>
-      </div>
-    </div>
-    <RankPage v-for="n in 5" :key="n" :rankN="n" />
+  <div id="app">
+    <router-link to="/login">Go to Login</router-link>
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import RankPage from './components/RankPage.vue';
-import RankTops from './components/RankTops.vue';
+import { ref, watch } from 'vue';
+import { getGoogleSignInResult } from '@/firebase';
+import { provide } from 'vue';
+import { auth } from './firebase';
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-    RankPage,
-    RankTops,
+
+  setup() {
+    // auth를 provide
+    provide('auth', auth);
+
+    // isLoggedIn을 reactive 변수로 만듦
+    const isLoggedIn = ref(false);
+
+    // isLoggedIn이 변경될 때의 로직
+    watch(isLoggedIn, (newValue) => {
+      console.log('isLoggedIn changed to:', newValue);
+    });
+
+    // beforeRouteLeave 훅을 이용한 라우트 변경 감지
+    const beforeRouteLeave = (to, from, next) => {
+      if (!from || !from.path) {
+        console.log('Initial route. No redirection.');
+        next();
+        return;
+      }
+
+      console.log('Previous route name:', from.name || 'None');
+
+      if (to.meta.requiresAuth && !isLoggedIn.value) {
+        console.log('Redirecting to LoginView');
+        next({ name: 'LoginView' });
+      } else if (to.name === 'LoginView' && isLoggedIn.value) {
+        // 로그인 성공 시의 처리를 호출
+        getGoogleSignInResult();
+        console.log('Redirecting to DashboardView');
+        next({ name: 'DashboardView' });
+      } else {
+        next();
+      }
+    };
+
+    // setup 함수에서 반환해야 하는 객체
+    return {
+      beforeRouteLeave,
+      isLoggedIn,
+    };
   },
 };
 </script>
 
 <style>
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-html {
-  font-family: 'Pretendard';
-  font-style: normal;
-  font-display: swap;
-  background-color: #0f0f0f;
-  width: 800px;
-  margin: auto;
-}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: #000000;
-  margin-top: 0px;
-  padding-top: 50px;
-}
-.rank {
-  margin: auto;
-  padding: 30px 0 30px 0;
-}
-.All_ranking {
-  margin-left: 45px;
-  display: flex;
-  color: #e4e4e4;
-  align-items: center;
-}
-.tooltip {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #d9d9d9;
-  color: #fff;
-  text-align: center;
-  border-radius: 70%;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* Tooltip text - show on hover */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
+  color: #2c3e50;
+  margin-top: 60px;
 }
 </style>

@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'RankNav',
   props: {
     msg: String,
   },
